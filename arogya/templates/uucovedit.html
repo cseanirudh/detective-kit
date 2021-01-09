@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   {% load static %}
+    <title>edit detail</title>
+      <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+  </head>
+  <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">ArogyaSetu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'index' %}">Your Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'self' %}">Self Assess</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'covidu' %}">Covid Updates</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'addstate' %}">Add State</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'user' %}">User Details</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  </header>
+
+<section>
+<div class="container-fluid">
+    <h2 class="text-center text-capitalize pt-5"><u>Change The Cases of Covid-19  On Daily Basis</u></h2>
+
+
+
+</div>
+</section>
+<div class="container-fluid">
+ <div class="container mb-5">
+    <h1 class="text-center text-capitalize pt-5">Update All States/UT States</h1>
+    <hr class="w-25 mx-auto pt-5">
+   <div class="w-50 mx-auto">
+ <form action=" " method="post" name="myform">
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="sel1">Please Select Your State:</label>
+      <select class="form-control" id="sel1" name="location">
+        <option>{{uustate.location}}</option>
+
+      </select>
+
+    </div>
+    <div class="form-group">
+    <label for="fname">Number of Confirmed Cases:</label>
+    <input type="number" class="form-control" placeholder="Enter Number" id="fnam" value="{{uustate.confirmed}}" name="confirmed" autocomplete="off">
+
+    </div>
+
+   <div class="form-group">
+    <label for="fname">Number of Recovered Cases:</label>
+    <input type="number" class="form-control" placeholder="Enter Number" id="fna" value="{{uustate.recovered}}" name="recovered" autocomplete="off">
+  </div>
+
+   <div class="form-group">
+    <label for="fname">Number of Deceased Cases:</label>
+    <input type="number" class="form-control" placeholder="Enter Number" id="fname" value="{{uustate.deceased}}" name="deceased" autocomplete="off">
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+   </div></div></div>
+
+
+
+     <section>
+      	<footer>
+        <div class="container-fluid">
+            <div class="row mb-5">
+         <div class="col-lg-6 col-md-4 clo-12">
+      <img src="{% static 'images/arogya.jpg' %}" class="card-img-top" alt="..." height="200">
+         </div>
+        <div class="col-lg-4 col-md-4 clo-12">
+      <img src="{% static 'images/go.jpg' %}" class="card-img-top" alt="..." height="200">
+         </div>
+
+        </div>
+        </div>
+        <p class="text-center bg-dark text-white">@Copyright Anibaba.com 2020</p>
+	</footer>
+
+</section>
+
+  </body>
+</html>

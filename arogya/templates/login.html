@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   {% load static %}
+    <title>User Login</title>
+      <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+  </head>
+  <body style="background-image: url({% static 'images/back2.jpg'%}); background-repeat: no-repeat;background-size: 100%">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">ArogyaSetu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">Self Assess</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'covidu' %}">Covid Updates</a>
+      </li>
+
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">Register</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+</header>
+ <div class="container-fluid">
+ <div class="container mb-5">
+    <h1 class="text-center text-capitalize pt-5">If Register! Please Login</h1>
+    <hr class="w-25 mx-auto pt-5">
+   <div class="w-50 mx-auto">
+ <form action=" " method="post" name="myform">
+  {% csrf_token %}
+    <div class="form-group1">
+    <label for="name">Enter Your Name:</label>
+    <input type="text" class="form-control" placeholder="Enter name" id="name" name="name" required autocomplete="off">
+  </div>
+
+     <div class="form-group1">
+    <label for="name">Enter your Contact Number(format: xxxxxxxxxx):</label>
+    <input type="tel" class="form-control" pattern="^\d{10}$" placeholder=" Enter contact" id="nam" name="mobile" required="required" autocomplete="off">
+  </div>
+
+
+<div class="form-group1">
+    <button type="submit" class="btn btn-primary"  value="add">Submit</button>
+</div>
+
+
+      </form>
+   </div>
+ </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ <!-- footer-->
+<hr class="red" >
+<section>
+	<footer>
+        <div class="container-fluid">
+            <div class="row mb-5">
+         <div class="col-lg-6 col-md-4 clo-12">
+      <img src="{% static 'images/arogya.jpg' %}" class="card-img-top" alt="..." height="200">
+         </div>
+        <div class="col-lg-4 col-md-4 clo-12">
+      <img src="{% static 'images/go.jpg' %}" class="card-img-top" alt="..." height="200">
+         </div>
+
+        </div>
+        </div>
+        <p class="text-center bg-dark text-white">@Copyright Anibaba.com 2020</p>
+	</footer>
+
+</section>
+
+  </body>
+</html>

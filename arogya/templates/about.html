@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   {% load static %}
+    <title>About Corona</title>
+      <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+  </head>
+  <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">ArogyaSetu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Stay home!  Stay safe!" href="{% url 'index' %}">Your Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  data-toggle="tooltip" data-placement="top" title="Please register first" href="{% url 'register' %}">Self Assess</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'covidu' %}">Covid Updates</a>
+
+         <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">Register</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+  </header>
+<section>
+    <div class="container-fluid">
+      <h1 class="text-center text-capitalize pt-5">About Corana</h1>
+    <hr class="w-25 mx-auto pt-5">
+
+  <div class="row mb-5">
+    <div class="col-lg-6 col-md-6 clo-12">
+      <img src="{% static 'images/corana1.jpg' %}" class="card-img-top" alt="..." width="300" height="500">
+
+    </div>
+
+    <div class="col-lg-6 col-md-6 clo-12">
+        <p> <h5><b><u>Coronavirus</u></b></h5><br>
+From Wikipedia, the free encyclopedia
+Jump to navigationJump to search
+This article is about the group of viruses. For the disease involved in the 2019–20 coronavirus pandemic, see Coronavirus disease 2019. For the virus that causes this disease, see Severe acute respiratory syndrome coronavirus 2.
+Orthocoronavirinae
+Coronaviruses 004 lores.jpg
+Transmission electron micrograph (TEM) of avian infectious bronchitis virus
+SARS-CoV-2 without background.png
+Illustration of the morphology of coronaviruses; the club-shaped viral spike peplomers, colored red, create the look of a corona surrounding the virion when observed with an electron microscope.<br>
+        <b><u>Virus classificatione</u></b><br>
+        <b>(unranked):</b>	Virus<br>
+        <b>Realm:</b>	Riboviria<br>
+        <b>Phylum:</b>	incertae sedis<br>
+        <b>Order:</b>	Nidovirales<br>
+        <b>Family:</b>	Coronaviridae<br>
+        <b>Subfamily:</b>	Orthocoronavirinae<br>
+<b>Genera
+Alphacoronavirus
+Betacoronavirus
+Gammacoronavirus
+Deltacoronavirus
+    Synonyms
+Coronavirinae</b><br>
+        <u>Coronaviruses</u> are a group of related viruses that cause diseases in mammals and birds. In humans, coronaviruses cause respiratory tract infections that can range from mild to lethal.
+     </p>
+    </div>
+      <div class="col-lg-12 col-md-12 clo-12">
+<p>Mild illnesses include some cases of the common cold (which is caused also by certain other viruses, predominantly rhinoviruses), while more lethal varieties can cause SARS, MERS, and COVID-19. Symptoms in other species vary: in chickens, they cause an upper respiratory tract disease, while in cows and pigs they cause diarrhea. There are as yet no vaccines or antiviral drugs to prevent or treat human coronavirus infections.
+
+Coronaviruses constitute the subfamily Orthocoronavirinae, in the family Coronaviridae, order Nidovirales, and realm Riboviria.[5][6] They are enveloped viruses with a positive-sense single-stranded RNA genome and a nucleocapsid of helical symmetry. The genome size of coronaviruses ranges from approximately 26 to 32 kilobases, one of the largest among RNA viruses.[7] They have characteristic club-shaped spikes that project from their surface, which in electron micrographs create an image reminiscent of the solar corona, from which their name derives.[8]
+     </p>
+    </div>
+  </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ <!-- footer-->
+<hr class="red" >
+<section>
+	<footer>
+        <div class="container-fluid">
+            <div class="row mb-5">
+         <div class="col-lg-6 col-md-4 clo-12">
+      <img src="{% static 'images/arogya.jpg' %}" class="card-img-top" alt="..." height="200">
+         </div>
+        <div class="col-lg-4 col-md-4 clo-12">
+      <img src="{% static 'images/go.jpg' %}" class="card-img-top" alt="..." height="200">
+         </div>
+
+        </div>
+        </div>
+        <p class="text-center bg-dark text-white">@Copyright Anibaba.com 2020</p>
+	</footer>
+
+</section>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+  </body>
+</html>

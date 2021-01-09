@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   {% load static %}
+    <title>result page</title>
+      <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+  </head>
+  <body id="bg" style="background-image: url({% static 'images/back1.jpg'%}); background-repeat: no-repeat;background-size: 100%">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">ArogyaSetu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" data-toggle="tooltip" data-placement="top" title="You are safe!" href="{% url 'index' %}">Your Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">Self Assess</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'covidu' %}">Covid Updates</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  </header>
+
+<section>
+<div class="container-fluid">
+    <h2 class="text-center text-capitalize pt-5"><u>Please give correct answer</u></h2>
+    <h3>Accurate answer help us- help you better.</h3>
+    <h5>Please note that information from this chat will be used for monitoring &
+    managment of the current health crisis and research in the fight against COVID-19.</h5>
+
+
+</div>
+</section>
+
+ <div class="container-fluid">
+ <div class="container mb-5">
+    <h1 class="text-center text-capitalize pt-5">Test Start</h1>
+    <hr class="w-25 mx-auto pt-5">
+   <div class="w-50 mx-auto">
+ <form action=" " method="post" name="myform">
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="sel1">Please Select Your Gender:</label>
+
+      <select class="form-control" id="sel1" name="gender" required>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Others</option>
+
+      </select>
+
+    </div>
+    <div class="form-group">
+    <label for="name">Enter your Age:</label>
+    <input type="number" class="form-control" placeholder="How many years you are old ?"min="0" max="99" id="name"  name="age" aria-required="true" autocomplete="off" required>
+  </div>
+      <div class="form-group">
+    <label for="name">Enter your Contact Number(format: xxxxxxxxxx):</label>
+    <input type="tel" class="form-control" pattern="^\d{10}$" placeholder=" Enter contact" id="nam" name="mobile" aria-required="true" required autocomplete="off">
+  </div>
+<div class="form-group">
+      <label for="sel1">Are you expericncing any of the following symptons?</label>
+
+      <select class="form-control" id="Sone" name="dise1" required >
+        <option value="">Please select your ......</option>
+        <option value="cough">Cough</option>
+        <option value="fever">Fever</option>
+        <option value="dfib">difficulty in breathing</option>
+        <option value="non">None of the above</option>
+      </select>
+
+     </div>
+     <div class="form-group">
+      <label for="sel1">Have you ever had any of the following:</label>
+
+      <select class="form-control" id="Sone1" name="dise2" required>
+          <option value="">Please select your ......</option>
+        <option value="diabetes">Diabetes</option>
+        <option value="hypertension">Hypertension</option>
+        <option value="Lung">Lung disease</option>
+        <option value="heart">Heart disease</option>
+        <option value="none1">None of the above</option>
+      </select>
+     </div>
+     <div class="form-group">
+
+      <label for="sel1">Have you traveled anywhere internationally in the last 14 days?</label>
+      <select class="form-control" id="Sone2" name="dise3" required>
+        <option value="">Please Tell......</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+     </div>
+
+
+     <div class="form-group">
+      <label for="sel1">Which of the following apply to you ?</label>
+      <select class="form-control" id="Sone3" name="dise4" required >
+        <option value="">Please Tell......</option>
+        <option value="doctor">I am a healthcare worker and I examined a COVID-19 confirmed case without protective gear.</option>
+        <option value="some">I have recently interacted or lived with someone who has tested positive for Covid-19.</option>
+          <option value="none" >None of the above</option>
+
+      </select>
+     </div>
+
+
+    <button type="submit" class="btn btn-primary" value="add" onclick="check()">Submit</button>
+      </form>
+   </div>
+ </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+     <section>
+      	<footer>
+        <div class="container-fluid">
+            <div class="row mb-5">
+         <div class="col-lg-6 col-md-4 clo-12">
+      <img src="{% static 'images/arogya.jpg' %}" class="card-img-top" alt="..." height="200">
+         </div>
+        <div class="col-lg-4 col-md-4 clo-12">
+      <img src="{% static 'images/go.jpg' %}" class="card-img-top" alt="..." height="200">
+         </div>
+
+        </div>
+        </div>
+        <p class="text-center bg-dark text-white">@Copyright Anibaba.com 2020</p>
+	</footer>
+
+</section>
+ <script>
+function check() {
+ var val = document.getElementById('Sone').value;
+ var val1 = document.getElementById('Sone1').value;
+ var val2 = document.getElementById('Sone2').value;
+ var val3 = document.getElementById('Sone3').value;
+ if(val=='cough' && val1=='diabetes' && val2=='yes' && val3=='doctor') {
+alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+
+
+ }
+else if(val=='cough' && val1=='hypertension' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+
+else if(val=='cough' && val1=='Lung' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+else if(val=='cough' && val1=='heart' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+else if(val=='cough' && val1=='none1' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+
+
+
+ else if(val=='fever' && val1=='diabetes' && val2=='yes' && val3=='doctor') {
+   alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+ }
+else if(val=='fever' && val1=='hypertension' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+
+else if(val=='fever' && val1=='Lung' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+else if(val=='fever' && val1=='heart' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+else if(val=='fever' && val1=='none1' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+
+
+ else if(val=='dfib' && val1=='diabetes' && val2=='yes' && val3=='doctor') {
+   alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana.")
+ }
+else if(val=='dfib' && val1=='hypertension' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana.")
+}
+
+else if(val=='dfib' && val1=='Lung' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana.")
+}
+else if(val=='dfib' && val1=='heart' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana.")
+}
+else if(val=='dfib' && val1=='none1' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana.")
+}
+
+
+else if(val=='non' && val1=='diabetes' && val2=='yes' && val3=='doctor') {
+   alert("Thanks You are Corana Warriors! But May You Have A  Chance To Suffer From Corana.")
+ }
+else if(val=='non' && val1=='hypertension' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A   Chance To Suffer From Corana.")
+}
+
+else if(val=='non' && val1=='Lung' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+else if(val=='non' && val1=='heart' && val2=='yes' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A Chance To Suffer From Corana.")
+}
+
+
+else if(val=='cough' && val1=='diabetes' && val2=='no' && val3=='doctor') {
+   alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+ }
+else if(val=='cough' && val1=='hypertension' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+
+else if(val=='cough' && val1=='Lung' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+else if(val=='cough' && val1=='heart' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+else if(val=='cough' && val1=='none1' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+
+
+
+ else if(val=='fever' && val1=='diabetes' && val2=='no' && val3=='doctor') {
+   alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+ }
+else if(val=='fever' && val1=='hypertension' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+
+else if(val=='fever' && val1=='lung' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+else if(val=='fever' && val1=='heart' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+else if(val=='fever' && val1=='none1' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  Less Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+
+
+ else if(val=='dfib' && val1=='diabetes' && val2=='no' && val3=='doctor') {
+   alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+ }
+else if(val=='dfib' && val1=='hypertension' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+
+else if(val=='dfib' && val1=='Lung' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+else if(val=='dfib' && val1=='heart' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+else if(val=='dfib' && val1=='none1' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+
+
+else if(val=='non' && val1=='diabetes' && val2=='no' && val3=='doctor') {
+   alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+ }
+else if(val=='non' && val1=='hypertension' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+
+else if(val=='non' && val1=='Lung' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+else if(val=='non' && val1=='heart' && val2=='no' && val3=='doctor'){
+  alert("Thanks You are Corana Warriors! But May You Have A  More Chance To Suffer From Corana, I Request To You Don't go outside If not necessary.")
+}
+else if(val=='cough' && val1=='diabetes' && val2=='yes' && val3=='some') {
+   alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+ }
+else if(val=='cough' && val1=='hypertension' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+
+else if(val=='cough' && val1=='Lung' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+else if(val=='cough' && val1=='heart' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+else if(val=='cough' && val1=='none1' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+
+
+
+ else if(val=='fever' && val1=='diabetes' && val2=='yes' && val3=='some') {
+   alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+ }
+else if(val=='fever' && val1=='hypertension' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+
+else if(val=='fever' && val1=='Lung' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+else if(val=='fever' && val1=='heart' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+else if(val=='fever' && val1=='none1' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+
+
+ else if(val=='dfib' && val1=='diabetes' && val2=='yes' && val3=='some') {
+   alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+ }
+else if(val=='dfib' && val1=='hypertension' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+
+else if(val=='dfib' && val1=='Lung' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+else if(val=='dfib' && val1=='heart' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+else if(val=='dfib' && val1=='none1' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+
+
+else if(val=='non' && val1=='diabetes' && val2=='yes' && val3=='some') {
+   alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+ }
+else if(val=='non' && val1=='hypertension' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+
+else if(val=='non' && val1=='Lung' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+else if(val=='non' && val1=='heart' && val2=='yes' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to quarantine under Quarantine Center.")
+}
+
+else if(val=='cough' && val1=='diabetes' && val2=='no' && val3=='some') {
+   alert("Thanks You are Corana Warriors! But you need to Checkup.")
+ }
+else if(val=='cough' && val1=='hypertension' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+
+else if(val=='cough' && val1=='Lung' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+else if(val=='cough' && val1=='heart' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+else if(val=='cough' && val1=='none1' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+
+
+
+ else if(val=='fever' && val1=='diabetes' && val2=='no' && val3=='some') {
+   alert("Thanks You are Corana Warriors! But you need to Checkup.")
+ }
+else if(val=='fever' && val1=='hypertension' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+
+else if(val=='fever' && val1=='Lung' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+else if(val=='fever' && val1=='heart' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+else if(val=='fever' && val1=='none1' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+
+
+ else if(val=='dfib' && val1=='diabetes' && val2=='no' && val3=='some') {
+   alert("Thanks You are Corana Warriors! But you need to Checkup.")
+ }
+else if(val=='dfib' && val1=='hypertension' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+
+else if(val=='dfib' && val1=='Lung' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+else if(val=='dfib' && val1=='heart' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+else if(val=='dfib' && val1=='none1' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+
+
+else if(val=='non' && val1=='diabetes' && val2=='no' && val3=='some') {
+   alert("Thanks You are Corana Warriors! But you need to Checkup.")
+ }
+else if(val=='non' && val1=='hypertension' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+
+else if(val=='non' && val1=='Lung' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+else if(val=='non' && val1=='heart' && val2=='no' && val3=='some'){
+  alert("Thanks You are Corana Warriors! But you need to Checkup.")
+}
+
+
+else if(val=='cough' && val1=='diabetes' && val2=='yes' && val3=='none') {
+   alert("Contact Your Doctor and I request to you please self Quarantine")
+ }
+else if(val=='cough' && val1=='hypertension' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+
+else if(val=='cough' && val1=='Lung' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+else if(val=='cough' && val1=='heart' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+else if(val=='cough' && val1=='none1' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+
+
+
+ else if(val=='fever' && val1=='diabetes' && val2=='yes' && val3=='none') {
+   alert("Contact Your Doctor and I request to you please self Quarantine")
+ }
+else if(val=='fever' && val1=='hypertension' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+
+else if(val=='fever' && val1=='Lung' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+else if(val=='fever' && val1=='heart' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+else if(val=='fever' && val1=='none1' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+
+
+ else if(val=='dfib' && val1=='diabetes' && val2=='yes' && val3=='none') {
+   alert("Contact Your Doctor and I request to you please self Quarantine")
+ }
+else if(val=='dfib' && val1=='hypertension' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+
+else if(val=='dfib' && val1=='Lung' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+else if(val=='dfib' && val1=='heart' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+else if(val=='dfib' && val1=='none1' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+
+
+else if(val=='non' && val1=='diabetes' && val2=='yes' && val3=='none') {
+   alert("Contact Your Doctor and I request to you please self Quarantine")
+ }
+else if(val=='non' && val1=='hypertension' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+
+else if(val=='non' && val1=='Lung' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+else if(val=='non' && val1=='heart' && val2=='yes' && val3=='none'){
+  alert("Contact Your Doctor and I request to you please self Quarantine")
+}
+
+
+else if(val=='cough' && val1=='diabetes' && val2=='no' && val3=='none') {
+   alert("Contact Your Doctor and Take Advise, Stay Home!")
+ }
+else if(val=='cough' && val1=='hypertension' && val2=='no' && val3=='none'){
+  alert("Contact Your Doctor and Take Advise, Stay Home!")
+}
+
+else if(val=='cough' && val1=='Lung' && val2=='no' && val3=='none'){
+  alert("Contact Your Doctor and Take Advise, Stay Home!")
+}
+else if(val=='cough' && val1=='heart' && val2=='no' && val3=='none'){
+  alert("Contact Your Doctor and Take Advise, Stay Home!")
+}
+else if(val=='cough' && val1=='none1' && val2=='no' && val3=='none'){
+  alert("Contact Your Doctor and Take Advise, Stay Home!")
+}
+
+
+
+  else if(val=='fever' && val1=='diabetes' && val2=='no' && val3=='none') {
+   alert("Contact Your Doctor and Take Advise, Stay Home!")
+ }
+else if(val=='fever' && val1=='hypertension' && val2=='no' && val3=='none'){
+  alert("Contact Your Doctor and Take Advise, Stay Home!")
+}
+
+else if(val=='fever' && val1=='Lung' && val2=='no' && val3=='none'){
+  alert("Contact Your Doctor and Take Advise, Stay Home!")
+}
+else if(val=='fever' && val1=='heart' && val2=='no' && val3=='none'){
+  alert("Contact Your Doctor and Take Advise, Stay Home!")
+}
+else if(val=='fever' && val1=='none1' && val2=='no' && val3=='none'){
+  alert("You are suffering from fever, So take advise from Doctor. Stay home! ")
+}
+
+
+ else if(val=='dfib' && val1=='diabetes' && val2=='no' && val3=='none') {
+   alert("Please Call Corana Helpline Number. ")
+ }
+else if(val=='dfib' && val1=='hypertension' && val2=='no' && val3=='none'){
+  alert("Please Call Corana Helpline Number. ")
+}
+
+else if(val=='dfib' && val1=='Lung' && val2=='no' && val3=='none'){
+  alert("Please Call Corana Helpline Number. ")
+}
+else if(val=='dfib' && val1=='heart' && val2=='no' && val3=='none'){
+  alert("Please Call Corana Helpline Number. ")
+}
+else if(val=='dfib' && val1=='none1' && val2=='no' && val3=='none'){
+  alert("Please Call Corana Helpline Number.")
+}
+
+
+ else if(val=='non' && val1=='diabetes' && val2=='no' && val3=='none') {
+   alert("Please Concerned Your Doctor. Stay home! ")
+ }
+else if(val=='non' && val1=='hypertension' && val2=='no' && val3=='none'){
+  alert("Please Concerned Your Doctor. Stay home! ")
+}
+
+else if(val=='non' && val1=='Lung' && val2=='no' && val3=='none'){
+  alert("Please Concerned Your Doctor. Stay home! ")
+}
+else if(val=='non' && val1=='heart' && val2=='no' && val3=='none'){
+  alert("Please Concerned Your Doctor. Stay home!  ")
+}
+
+else if(val=='' && val1=='' && val2=='' && val3==''){
+ alert("Please Provide Correct Information.")}
+ else {
+ alert ("You are Safe!  Stay Home! Stay Safe!")
+  }
+}
+
+
+
+
+
+
+</script>
+
+  </body>
+</html>
